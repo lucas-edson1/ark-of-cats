@@ -1,0 +1,50 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display: flex; 
+    align-items: center;
+}
+
+.icon {
+    font-size: 3rem; 
+    margin-left: 10px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9;
+}
+
+.text-top {
+    font-size: 1.4rem; 
+    text-align: center; 
+    margin: 0; 
+}
+
+.text-bottom {
+    font-size: 1.4rem; 
+    text-align: center;
+    margin: 0; 
+}
+
+.welcome-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.welcome-message p {
+    margin: 0 10px;
+}
+
+.search-cat {
+    width: 70%;
+    margin: 0 auto;
+}
+
