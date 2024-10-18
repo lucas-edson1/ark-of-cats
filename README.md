@@ -28,13 +28,16 @@ Certifique-se de editar no .env do projeto clonado com as credenciais de acordo 
 ### Passo 4
 Instale as dependências do Laravel e do front-end rodando os seguintes comandos:
 
-- composer install
-- npm install
+```bash
+    composer install
+    npm install
+```
 
 ### Passo 5
 Rode as migrations para criar a estrutura de tabelas do Banco com o seguinte comando:
 
-php artisan migrate
-
+```bash
+    php artisan migrate
+```
 ### Passo 6
 Clique em Iniciar Tudo no menu do Laragon e o projeto estará rodando. Para acessar você pode clicar com o botão direito na janela do Laragon, na opção www clicar no nome do projeto e ele irá redirecionar para o localhost.
