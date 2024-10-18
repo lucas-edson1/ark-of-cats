@@ -1,50 +1,667 @@
-.header-container {
-    display: flex;
+body {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;  
+}
+
+h1, h2, h3{
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;    
+    font-style: normal;
+}
+
+/*******************************
+   Estilos do Layout Genérico
+*******************************/
+
+.navbar-container{
+    background-color: #4793a4;
+}
+
+.navbar-container .header-container {    
     align-items: center;
     justify-content: space-between;
 }
 
-.logo-container {
+.navbar-container .header-container .logo-container {
     display: flex; 
     align-items: center;
+    color: #fff;
 }
 
-.icon {
-    font-size: 3rem; 
+.navbar-container .header-container .logo-container i {
+    font-size: 2.6rem;
     margin-left: 10px;
 }
 
-.text-container {
+.navbar-container .header-container .logo-container .text-container {
     display: flex;
     flex-direction: column;
     line-height: 0.9;
 }
 
-.text-top {
+.navbar-container .header-container .logo-container .text-container .text-top {
     font-size: 1.4rem; 
     text-align: center; 
     margin: 0; 
 }
 
-.text-bottom {
+.navbar-container .header-container .logo-container .text-container .text-bottom {
     font-size: 1.4rem; 
     text-align: center;
     margin: 0; 
 }
 
-.welcome-message{
+.navbar-container .header-container .auth-buttons{
+    display: flex;
+    margin-bottom: 0;
+    margin-left: auto;   
+}
+
+.navbar-container .header-container .auth-buttons a{
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 25px;
+    margin-right: 10px;
+    background: linear-gradient(90deg, rgba(71,164,88,1) 0%, rgba(24,158,55,1) 46%, rgba(71,147,160,1) 100%);
+    padding: 8px 20px;
+}
+
+.navbar-container .header-container .auth-buttons a:hover{
+    background: linear-gradient(90deg, rgba(58,134,72,1) 0%, rgba(19,128,44,1) 46%, rgba(56,116,126,1) 100%);
+    border: 1px solid #fff;
+    color: #fff;    
+}
+
+.navbar-container .header-container .dropdown {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.navbar-container .header-container #navbarText{
+    color: #fff;
+    font-weight: bold;
+}
+
+.full-screen-container{
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #ddd;
+}
+
+/*******************************
+   Estilos da Página Home
+*******************************/
+.container-home{
+    font-size: 1rem;
+    position: relative;    
+    width: 100%;
+    z-index: 2;    
+}
+
+.container-home .welcome-message{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
+    padding: 20px 0;
 }
 
-.welcome-message p {
+.container-home .welcome-message p {
     margin: 0 10px;
 }
 
-.search-cat {
+.container-home .search-cat {
     width: 70%;
     margin: 0 auto;
 }
 
+.container-home #cat-search-form input {
+    margin: 0;
+    border-radius: 25px 0 0 25px;
+}
+
+.container-home #cat-search-form .btn-success {
+    margin: 0 !important;
+    border-radius: 0 25px 25px 0;
+}
+
+.container-home #results-container .card-pattern{
+    text-align: center;
+}
+
+.container-home #results-container .card-pattern img {
+    height: 280px; 
+    width: 100%; 
+    object-fit: cover;
+}
+
+.container-home #results-container .card-pattern .btn-favorited{
+    background-color: #c44545 !important;    
+    border: none;
+}
+
+.container-home #results-container .card-pattern .btn-favorited i{
+    filter: invert(1) !important;
+}
+
+.container-home #results-container .not-found-msg{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+}
+
+.container-home #results-container .not-found-msg i {
+    font-size: 1.8rem;
+    margin-top: 6px;
+}
+
+/*******************************
+   Estilos da Página Perfil
+*******************************/
+
+.full-screen-container #update-profile-form input {
+    border-radius: 25px;
+}
+
+.full-screen-container #update-profile-form button {
+    border-radius: 25px;
+    width: 100%;   
+    background: linear-gradient(90deg, rgba(71,164,88,1) 0%, rgba(24,158,55,1) 46%, rgba(71,147,160,1) 100%);
+    color: #fff;    
+}
+
+.full-screen-container #update-profile-form button:hover{
+    background: linear-gradient(90deg, rgba(58,134,72,1) 0%, rgba(19,128,44,1) 46%, rgba(56,116,126,1) 100%);
+}
+
+.full-screen-container #favorite-cats .card-pattern{
+    text-align: center;
+}
+
+.full-screen-container #favorite-cats .card-pattern img {
+    height: 280px; 
+    width: 100%; 
+    object-fit: cover;
+}
+
+/*******************************
+   Estilos da Página Cadastro
+*******************************/
+
+.cadastro-screen{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;  
+}
+
+.cadastro-screen .cadastro-container {
+    position: relative;
+    flex-basis: 35%;
+    background-color: #4793a4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.cadastro-screen .cadastro-container .form-content {        
+    padding: 20px 40px;
+}
+
+.cadastro-screen .cadastro-container .form-content label {    
+    color: #fff;   
+    font-weight: bold; 
+}
+
+.cadastro-screen .cadastro-container .form-content input {    
+    border-radius: 25px;
+}
+
+.cadastro-screen .cadastro-container .form-content select {    
+    border-radius: 25px;
+}
+
+.cadastro-screen .cadastro-container .form-content .btn-cadastrar {
+    width: 100%;
+    border-radius: 25px;    
+    background: linear-gradient(90deg, rgba(71,164,88,1) 0%, rgba(24,158,55,1) 46%, rgba(71,147,160,1) 100%);
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;    
+    cursor: pointer;            
+}
+
+.cadastro-screen .cadastro-container .form-content .btn-cadastrar:hover {
+    background: linear-gradient(90deg, rgba(58,134,72,1) 0%, rgba(19,128,44,1) 46%, rgba(56,116,126,1) 100%);
+    transition: 0.5s !important;
+}
+
+.cadastro-screen .cat-layout{
+    position: relative;
+    background-image: url(../images/cadastro-background.jpg);
+    background-size: cover;
+    flex-basis: 65%;    
+    background-color: #4793a4;
+    color: #fff;
+    font-size: 2rem;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4793a4;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.cadastro-screen .cat-layout .cat-layout-content{
+    position: relative;    
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;        
+    z-index: 2;    
+}
+
+.cadastro-screen .cat-layout .text-content {
+    text-align: center;
+}
+
+.cadastro-screen .cat-layout .text-content p {
+    font-size: 1.3rem;
+    margin: 0 35px;     
+}
+
+/*******************************
+   Estilos da Página Login
+*******************************/
+
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-image: url(../images/login-background.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;  
+}
+
+.login-container #login-form {
+    position: relative;    
+    width: 40%;
+    margin: 0 auto;
+    z-index: 2; 
+    color: #fff;
+    background-color: #4793a4;    
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.login-container #login-form input{
+    border-radius: 25px;
+}
+
+.login-container #login-form .btn-login {
+    width: 100%;
+    border-radius: 25px;    
+    background: linear-gradient(90deg, rgba(71,164,88,1) 0%, rgba(24,158,55,1) 46%, rgba(71,147,160,1) 100%);
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;    
+    cursor: pointer;        
+}
+
+.login-container #login-form .btn-login:hover{
+    background: linear-gradient(90deg, rgba(58,134,72,1) 0%, rgba(19,128,44,1) 46%, rgba(56,116,126,1) 100%);
+    transition: 0.5s !important;
+}
+
+.login-container #login-form h3{
+    font-size: 0.9rem;
+}
+
+.login-container #login-form a{
+    transition: 0.5s ease-in-out;
+}
+
+.login-container #login-form a:hover{
+    font-weight: bold;
+    color: #fff;
+}
+
+/*******************************
+ Estilos da Animação do Gatinho
+    na página de Cadastro
+*******************************/
+.container-animated-cat{
+    width: 250px;
+    margin: 20px 0 20px 0;
+}
+#Mouth, #EyesClosed, .meow{
+opacity: 0;
+}
+
+/*******************************
+        Responsividade
+*******************************/ 
+@media (min-width: 320px) and (max-width: 480px) {
+    
+    /***** Cadastro Page*****/
+    .cadastro-screen{
+        display: block !important;
+    }    
+
+    .cadastro-screen .cadastro-container .form-content label,
+    .cadastro-screen .cadastro-container .form-content input,
+    .cadastro-screen .cadastro-container .form-content select
+    .cadastro-screen .cadastro-container .form-content .btn-cadastrar{
+        font-size: 0.9rem;
+    }
+
+    .cadastro-screen .cadastro-container .form-content {
+        padding: 20px;
+    }
+
+    .cadastro-screen .cat-layout .text-content h2 {
+        padding: 0 10px;
+    }
+
+    .cadastro-screen .cat-layout .text-content p {
+        font-size: 0.8rem;
+        margin: 0 15px;
+    }
+
+    .cadastro-screen .cat-layout .text-content i {
+        font-size: 1rem;
+        margin-top: 0 !important;
+    }
+
+    /***** Login Page *****/
+    .login-container #login-form{
+        width: 100%;
+    }
+
+    .login-container #login-form .cadastrar{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-container .header-container #navbarText .nav-item a {
+        color: #fff;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    /***** Header *****/
+    .navbar-container .header-container .logo-container {
+        margin-left: 20px;
+    }
+
+    .navbar-container .dropdown {
+        display: none;
+    }
+
+    .navbar-container .header-container .auth-buttons {
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .navbar-container .header-container #navbarText {
+        color: #fff;
+        font-weight: bold;
+        border-top: 1px solid;
+        margin-top: 8px;
+        padding: 5px;
+        text-align: center;
+    }
+
+    /***** Home Page *****/
+    .container-home .welcome-message {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container-home .welcome-message i {
+        margin: 8px 0;
+    }
+
+    .container-home .search-cat {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container-home .search-cat input {
+        margin-bottom: 5px !important;
+        border-radius: 25px !important;
+    }
+
+    .container-home .search-cat .btn-success {
+        border-radius: 25px !important;
+    }
+
+    .container-home #results-container .card-pattern .card-body{
+        padding: 10px;
+    }
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    
+    /***** Cadastro Page*****/
+    .cadastro-screen{
+        display: block !important;
+    }    
+
+    .cadastro-screen .cadastro-container .form-content label,
+    .cadastro-screen .cadastro-container .form-content input,
+    .cadastro-screen .cadastro-container .form-content select
+    .cadastro-screen .cadastro-container .form-content .btn-cadastrar{
+        font-size: 0.9rem;
+    }
+
+    .cadastro-screen .cadastro-container .form-content select {
+        margin-top: 30px;
+    }
+
+    .cadastro-screen .cadastro-container .form-content {
+        padding: 20px;
+    }
+
+    .cadastro-screen .cat-layout .text-content h2 {
+        padding: 0 10px;
+        font-size: 1.8rem;
+    }
+
+    .cadastro-screen .cat-layout .text-content p {
+        font-size: 1rem;
+        margin: 0 45px;
+    }
+
+    .cadastro-screen .cat-layout .text-content i {
+        font-size: 1.6rem;
+        margin-top: 0 !important;
+    }
+
+    /***** Login Page *****/
+    .login-container #login-form{
+        width: 100%;
+    }
+
+    .login-container #login-form .cadastrar{
+        flex-direction: column;
+        align-items: center;
+    }    
+
+    /***** Header *****/
+    .navbar-container .header-container .logo-container {
+        margin-left: 20px;
+    }
+
+    .navbar-container .dropdown {
+        display: none;
+    }
+
+    .navbar-container .header-container .auth-buttons {
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .navbar-container .header-container #navbarText {
+        color: #fff;
+        font-weight: bold;
+        border-top: 1px solid;
+        margin-top: 8px;
+        padding: 5px;
+        text-align: center;
+    }
+
+    /***** Home Page *****/
+    .container-home .welcome-message {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container-home .welcome-message i {
+        margin: 8px 0;
+    }
+
+    .container-home .search-cat {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container-home .search-cat input {
+        margin-bottom: 5px !important;
+        border-radius: 25px !important;
+    }
+
+    .container-home .search-cat .btn-success {
+        border-radius: 25px !important;
+    }
+
+    .container-home #results-container .card-pattern .card-body{
+        padding: 10px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /***** Cadastro Page*****/
+    .cadastro-screen .cadastro-container .form-content{
+        padding: 20px;
+        margin-top: 8px;
+    }
+ 
+    .cadastro-screen .cadastro-container .form-content label,
+    .cadastro-screen .cadastro-container .form-content input,
+    .cadastro-screen .cadastro-container .form-content select
+    .cadastro-screen .cadastro-container .form-content .btn-cadastrar{
+        font-size: 0.9rem;
+    }
+
+    .cadastro-screen .cadastro-container .form-content div {
+        margin-bottom: 10px !important;
+    }
+
+    .cadastro-screen .cat-layout .text-content h2 {
+        padding: 0 10px;
+        font-size: 1.5rem;
+    }
+
+    .cadastro-screen .cat-layout .text-content p {
+        margin: 0 20px;
+        font-size: 1rem;
+    }
+
+    /***** Login Page *****/
+    .login-container #login-form{
+        width: 70%;
+    }
+
+    .login-container #login-form .cadastrar{
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.9rem;
+    }
+
+    /***** Header *****/
+    .navbar-container .header-container .logo-container {
+        margin-left: 20px;
+    }
+
+    .navbar-container .dropdown {
+        display: none;
+    }
+
+    .navbar-container .header-container .auth-buttons {
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .navbar-container .header-container #navbarText {
+        color: #fff;
+        font-weight: bold;        
+        margin-top: 8px;
+        padding: 5px;
+        text-align: center;
+    }
+
+    /***** Home Page *****/
+    .container-home .welcome-message {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container-home .welcome-message i {
+        margin: 8px 0;
+    }
+
+    .container-home #results-container .card-pattern img {
+        height: 230px; 
+        width: 100%; 
+        object-fit: cover;
+    }
+
+    .container-home #results-container .card-pattern .card-body {
+        padding: 10px;
+    }
+
+    .container-home #results-container .card-pattern .card-body h5 {
+        font-size: 1rem;        
+    }
+
+    /***** Perfil Page *****/
+    
+    .full-screen-container #favorite-cats .card-pattern img {
+        height: 230px; 
+        width: 100%; 
+        object-fit: cover;
+    }
+
+    .full-screen-container #favorite-cats .card-pattern .card-body {
+        padding: 10px;
+    }    
+
+    .full-screen-container #favorite-cats .card-pattern .card-body h5 {
+        font-size: 1rem;
+    }
+
+    .full-screen-container #favorite-cats .card-pattern .card-body button {
+        font-size: 0.9rem;
+    }
+}
