@@ -12,37 +12,25 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    // Campos a serem preenchidos na criação de um Usuário
     protected $fillable = [
         'name',
         'email',
+        'phone',
+        'cpf',
         'password',
-    ];
+        'sexo',
+        'status',
+        'last_access',
+    ];    
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+     // Campos ou campo a serem ocultados na conversão do modelo para JSON
     protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+        'password'        
+    ];    
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
+    public function favoriteCats()
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $this->hasMany(UserFavorite::class, 'user_id', 'id');
     }
 }
